@@ -1,5 +1,19 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <repositories>
+       <repository>
+         <id>central</id>
+         <name>Maven Repository Switchboard</name>
+         <layout>default</layout>
+         <url>http://folk.uio.no/tobiast/repository/</url>
+         <snapshots>
+           <enabled>false</enabled>
+         </snapshots>
+       </repository>
+     </repositories>
+
+
   <modelVersion>4.0.0</modelVersion>
   <groupId>no.torrissen</groupId>
   <artifactId>myHBaseTutorial</artifactId>
@@ -29,6 +43,12 @@
           <artifactId>hbase</artifactId>
           <version>0.20.0</version>
       </dependency>
+      <dependency>
+          <groupId>zookeeper</groupId>
+          <artifactId>zookeeper</artifactId>
+          <version>3.2.2</version>
+      </dependency>
+
 
   </dependencies>
 

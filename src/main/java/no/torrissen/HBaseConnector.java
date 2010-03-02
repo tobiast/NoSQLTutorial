@@ -9,9 +9,12 @@ package no.torrissen;
  */
 
 
+import org.apache.hadoop.hbase.client.Get;
 import org.apache.hadoop.hbase.client.HTable;
 import org.apache.hadoop.hbase.HBaseConfiguration;
+import org.apache.hadoop.hbase.client.Result;
 import org.apache.hadoop.hbase.io.RowResult;
+import org.apache.hadoop.hbase.util.Bytes;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -19,21 +22,29 @@ import java.io.IOException;
 
 public class HBaseConnector {
 
-    public static Map retrievePost(String postId) throws IOException {
-        HTable table = new HTable(new HBaseConfiguration(), "muppets");
-        Map post = new HashMap();
+    public static Map retrieveMuppet(String muppetId) throws IOException {
+        HBaseConfiguration config =  new HBaseConfiguration();
+        config.set("hbase.zookeeper.quorum", "192.168.1.61");
 
-        RowResult result = table.getRow(postId);
+        HTable table = new HTable(config, "muppets");
+        Map muppet = new HashMap();
 
-        for (byte[] column : result.keySet()) {
-            post.put(new String(column), new String(result.get(column).getValue()));
-        }
-        return post;
+        Get g = new Get(Bytes.toBytes(muppetId));
+        Result r = table.get(g);
+        byte [] value = r.getValue(Bytes.toBytes("names"),Bytes.toBytes("fullname"));
+
+        String valueStr = Bytes.toString(value);
+        
+        System.out.println("GET: " + valueStr);
+
+       
+
+        return muppet;
     }
 
     public static void main(String[] args) throws IOException {
-        Map blogpost = HBaseConnector.retrievePost("Kermit");
-        System.out.println(blogpost.get("name:fistname"));
-        System.out.println(blogpost.get("name:nickname"));
+        Map muppet = HBaseConnector.retrieveMuppet("Kermit");
+        System.out.println(muppet.get("names:fullname"));
+        System.out.println(muppet.get("names:nickname"));
     }
 }
