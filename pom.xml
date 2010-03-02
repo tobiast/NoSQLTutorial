@@ -12,7 +12,26 @@
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>3.8.1</version>
-      <scope>test</scope>
+        <scope>test</scope>
     </dependency>
+      <dependency>
+          <groupId>org.apache.mahout.hadoop</groupId>
+          <artifactId>hadoop-core</artifactId>
+          <version>0.20.1</version>
+      </dependency>
+      <dependency>
+          <groupId>commons-logging</groupId>
+          <artifactId>commons-logging</artifactId>
+          <version>1.1</version>
+      </dependency>
+        <dependency>
+          <groupId>org.apache.mahout.hbase</groupId>
+          <artifactId>hbase</artifactId>
+          <version>0.20.0</version>
+      </dependency>
+
   </dependencies>
+
+
+
 </project>
