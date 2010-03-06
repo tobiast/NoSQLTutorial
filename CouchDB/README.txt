@@ -1,5 +1,5 @@
-HBase tutorial
---------------
+CouchDB tutorial
+----------------
 1) mvn clean install
 
 2) 

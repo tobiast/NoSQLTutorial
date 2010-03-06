@@ -1,4 +1,4 @@
-HBase tutorial
+Neo4J tutorial
 --------------
 1) mvn clean install
 

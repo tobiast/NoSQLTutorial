@@ -1,5 +1,5 @@
-HBase tutorial
---------------
+Voldemort tutorial
+------------------
 1) mvn clean install
 
 2) 
