@@ -61,8 +61,6 @@ public class HBaseConnector {
 
     public  void createMuppet(final String muppetId, final Map<String, String> attributes) throws IOException {
 
-
-
         Put p = new Put(Bytes.toBytes(muppetId));
         p.add(Bytes.toBytes("names"), Bytes.toBytes("Andebynavn"),
              Bytes.toBytes("Donald Duck"));
