@@ -27,7 +27,7 @@ public class HBaseConnectorTest extends TestCase {
      */
     public HBaseConnectorTest(String testName) throws IOException {
         super(testName);
-//        myConnector = new HBaseConnector("muppets", "10.0.0.26");
+
     }
 
 
@@ -38,8 +38,6 @@ public class HBaseConnectorTest extends TestCase {
      */
     public void testRead() throws Exception {
 
-//        Map<String, String> muppet = myConnector.retrieveMuppet("Kermit");
-//        System.out.println(muppet.toString());
     }
 
     /**
@@ -49,8 +47,6 @@ public class HBaseConnectorTest extends TestCase {
      */
     public void testWrite() throws IOException {
 
-//       myConnector.createMuppet("Wukka Foobar", null);
-//        Map<String, String> muppet2 = myConnector.retrieveMuppet("Wukka Foobar");
 
     }
 
