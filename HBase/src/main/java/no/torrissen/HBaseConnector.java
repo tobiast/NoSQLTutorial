@@ -77,19 +77,12 @@ public class HBaseConnector {
             String columnFamilyName = columnFamily.getKey();
             Map<String, String> columns = columnFamily.getValue();
 
-
             for (Map.Entry<String, String> column : columns.entrySet()){
                  p.add(Bytes.toBytes(columnFamilyName), Bytes.toBytes(column.getKey()), Bytes.toBytes(column.getValue()));
             }
         }
 
         table.put(p);
-
     }
-
-
-
-
-
 
 }
