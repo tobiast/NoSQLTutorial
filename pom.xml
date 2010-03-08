@@ -1,0 +1,15 @@
+<project>
+     <name>NoSQL workshop superproject</name>
+     <modelVersion>4.0.0</modelVersion>
+   
+     <groupId>com.attainware.maven2example</groupId>
+        <version>1.0</version>
+     <artifactId>maven2example_package</artifactId>
+     <packaging>pom</packaging>
+   
+     <modules>
+       <module>CouchDB</module>
+       <module>Neo4J</module>
+       <module>HBase</module>
+     </modules>
+ </project>
