@@ -1,6 +1,7 @@
 package no.torrissen;
 
-import junit.framework.TestCase;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -12,22 +13,21 @@ import java.util.Map;
  * Date: Mar 6, 2010
  * Time: 02:17:44 AM
  */
-public class HBaseConnectorTest extends TestCase {
+public class HBaseConnectorTest{
 
-    private HBaseConnector myConnector;
+    private static HBaseConnector myConnector;
 
 
     /**
-     * Created by IntelliJ IDEA.
+     * testcase init method
      * User: tobiast
      * Date: Mar 6, 2010
-     * Time: 2:17:44 PM
+     * Time: 2:17:44 AM
      *
-     * @param testName name of the test case
      * @throws java.io.IOException if connection fails.
      */
-    public HBaseConnectorTest(String testName) throws IOException {
-        super(testName);
+    @BeforeClass
+    public static  void init() throws IOException {
         myConnector = new HBaseConnector("muppets", "10.0.0.28");
     }
 
@@ -37,6 +37,7 @@ public class HBaseConnectorTest extends TestCase {
      *
      * @throws Exception if connection fails
      */
+    @Test
     public void testRead() throws Exception {
 
         Map<String, String> muppet = myConnector.retrieveMuppet("Kermit");
@@ -48,6 +49,7 @@ public class HBaseConnectorTest extends TestCase {
      *
      * @throws java.io.IOException if connection fails
      */
+    @Test
     public void testWrite() throws IOException {
 
        myConnector.createMuppet("The Animal", createAnimal());
@@ -60,7 +62,7 @@ public class HBaseConnectorTest extends TestCase {
      * Creates Map containing the Animal«s attributes. To be used in testing.
      * @return an initialized map
      */
-    final Map<String, Map<String,String>> createAnimal(){
+    private Map<String, Map<String,String>> createAnimal(){
 
      final Map<String, Map<String, String>> newMuppet = new HashMap<String, Map<String, String>>();
 
