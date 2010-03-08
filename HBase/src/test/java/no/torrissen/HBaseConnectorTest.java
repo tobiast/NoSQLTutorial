@@ -79,7 +79,8 @@ public class HBaseConnectorTest extends TestCase {
         newMuppet.put("actors", newMuppetActors);
         newMuppet.put("jobs", newMuppetJobs);
 
-        return  newMuppet;                             }
+        return  newMuppet;
+    }
 
 }
 
