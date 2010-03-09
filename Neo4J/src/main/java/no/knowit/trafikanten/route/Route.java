@@ -7,34 +7,10 @@ import java.util.List;
 import no.knowit.trafikanten.domain.Connectiontype;
 
 /**
- * Denne klassen representerer en rute. Denne er laget så immutable som mulig. 
+ * Denne klassen representerer en rute. 
  */
 public class Route implements Iterable<RouteElement>
 { 
-
-	/**
-	 * For at Route skal være immutable så brukes denne Builderen for å skape instanser av Route. 
-	 */
-	public static class Builder {
-		
-		private final List<RouteElement> routeElements = new LinkedList<RouteElement>();
-		private final String from;
-		
-		public Builder(String from){
-			this.from = from;
-		}
-		
-		public Builder addRouteelement(String destination, Integer duration, Connectiontype travelType) {
-			RouteElement routeElement = new RouteElement(destination, duration, travelType);
-			routeElements.add(routeElement);
-			return this;
-		}
-
-		public Route build() {
-			return new Route(from, routeElements);
-		}
-
-	}
 
 	/** Samtlige element i ruten untagen det første */
 	private final List<RouteElement> routeElements = new LinkedList<RouteElement>();
@@ -42,11 +18,15 @@ public class Route implements Iterable<RouteElement>
 	/** Startpunktet for denne ruten er definert mha denne strengen. */
 	private final String from;
 
-	private Route(String from, List<RouteElement> routeElements) {
+	public Route(String from) {
 		this.from = from;
-		this.routeElements.addAll(routeElements);
 	}
 
+	public void addRouteelement(String destination, Integer duration, Connectiontype travelType) {
+		RouteElement routeElement = new RouteElement(destination, duration, travelType);
+		routeElements.add(routeElement);
+	}	
+	
 	@Override
 	public Iterator<RouteElement> iterator() {
 		return this.routeElements.iterator();
