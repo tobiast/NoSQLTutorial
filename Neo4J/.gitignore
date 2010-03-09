@@ -1,0 +1,9 @@
+# Can ignore specific files
+.classpath
+.project
+target
+.settings
+*.log
+db
+*~
+bin

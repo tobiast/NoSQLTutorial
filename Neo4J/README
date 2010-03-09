@@ -1,0 +1,8 @@
+NEO4J WORKSHOP
+
+Bygg prosjektet:
+     mvn clean install -Dmaven.test.skip=true
+  	
+Start applikasjonen:
+     java -jar target/target/trafikanten-1.0-SNAPSHOT-jar-with-dependencies.jar 
+  
