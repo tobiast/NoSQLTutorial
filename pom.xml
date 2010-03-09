@@ -8,8 +8,21 @@
      <packaging>pom</packaging>
    
      <modules>
-       <module>CouchDB</module>
+       <!--<module>CouchDB</module>-->
        <module>Neo4J</module>
        <module>HBase</module>
+       <module>Voldemort</module>
      </modules>
+
+    <repositories>
+        <repository>
+            <id>tobiast</id>
+            <name>Maven Repository Switchboard</name>
+            <layout>default</layout>
+            <url>http://folk.uio.no/tobiast/repository</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
  </project>
