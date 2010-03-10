@@ -8,7 +8,7 @@
      <packaging>pom</packaging>
    
      <modules>
-       <!--<module>CouchDB</module>-->
+       <module>CouchDB</module>
        <module>Neo4J</module>
        <module>HBase</module>
        <module>Voldemort</module>
