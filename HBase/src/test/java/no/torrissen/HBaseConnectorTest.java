@@ -28,7 +28,7 @@ public class HBaseConnectorTest{
      */
     @BeforeClass
     public static  void init() throws IOException {
-        myConnector = new HBaseConnector("muppets", "10.0.0.28");
+        myConnector = new HBaseConnector("muppets", "192.168.10.187");
     }
 
 
