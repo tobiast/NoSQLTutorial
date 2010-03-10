@@ -27,7 +27,6 @@ public class HBaseConnectorTest{
      */
     @BeforeClass
     public static  void init() throws IOException {
-
     }
 
 
