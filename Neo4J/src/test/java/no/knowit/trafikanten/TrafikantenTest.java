@@ -64,6 +64,9 @@ public class TrafikantenTest {
 		List<Station> list = null;
 		try {
 			list = app.searchForStation(".*o.*");
+			for (Station station : list) {
+				Assert.assertTrue("Returnerte stasjoner skal ha navn som matcher .*o.*", station.getName().matches(".*o.*"));
+			}
 			tx.success();
 		} catch (Exception e) {
 			logger.info(e.getMessage());
@@ -72,7 +75,6 @@ public class TrafikantenTest {
 		} finally {
 			tx.finish();
 		}
-		Assert.assertEquals("Ved søk på stasjoner som matcher .*o.* skal rett resultat returneres.", 6, list.size());
 	}
 
 	@Test
