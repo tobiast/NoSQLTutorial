@@ -65,7 +65,7 @@ public class HBaseConnector {
      * Iterates over the Map passed as parameter and inserts into the 
      *
      * @param muppetId the muppet identifier
-     * @param attributes a map containing all the muppet«s attributes. Keys must match the column families defined in the table
+     * @param attributes a map containing all the muppet's attributes. Keys must match the column families defined in the table
      * @throws IOException if stuff blow up.
      */
     public  void createMuppet(final String muppetId, final Map<String, Map<String, String>> attributes) throws IOException {
