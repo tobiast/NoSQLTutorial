@@ -2,9 +2,9 @@
      <name>NoSQL workshop superproject</name>
      <modelVersion>4.0.0</modelVersion>
    
-     <groupId>com.attainware.maven2example</groupId>
+     <groupId>no.knowit.nosqlworkshop</groupId>
         <version>1.0</version>
-     <artifactId>maven2example_package</artifactId>
+     <artifactId>nosqlworkshop</artifactId>
      <packaging>pom</packaging>
    
      <modules>
